@@ -1,8 +1,8 @@
 import { canvas, context, gravity } from '../utils/index.js';
 import { playerImage } from '../utils/constants/bagConstants.js';
 
-const PLAYER_INITIAL_POSITION_X = 100;
-const PLAYER_INITIAL_POSITION_Y = 100;
+const PLAYER_INITIAL_POSITION_X = 50;
+const PLAYER_INITIAL_POSITION_Y = 0;
 const PLAYER_INITIAL_VELOCITY_X = 0;
 const PLAYER_INITIAL_VELOCITY_Y = 0;
 const PLAYER_WIDTH = 48;
