@@ -1,7 +1,7 @@
 import { context } from '../utils/index.js';
 
-const PLATFORM_WIDTH = 270;
-const PLATFORM_HEIGTH = 75;
+const PLATFORM_WIDTH = 175;
+const PLATFORM_HEIGTH = 48;
 const PLATFORM_SHAMT = 5;
 
 export default class Platform {
@@ -22,7 +22,7 @@ export default class Platform {
 
 	createPlayground() {
 		let playground = new Image();
-		playground.src = 'assets/images/playground.png';
+		playground.src = 'assets/images/playground-small.png';
 
 		return playground;
 	}
