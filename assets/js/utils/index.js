@@ -2,7 +2,7 @@
 const canvas = document.querySelector('canvas');
 const context = canvas.getContext('2d');
 
-canvas.width = innerWidth;
+canvas.width = document.querySelector('.game-background').offsetWidth;
 canvas.height = document.querySelector('.game-background').offsetHeight;
 
 const gravity = 1;
@@ -14,7 +14,11 @@ const keys = {
 
 	left: {
 		pressed: false
-	}
+	},
+
+	jump: {
+		pressed: false,
+	},
 };
 
 export {
