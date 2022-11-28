@@ -125,7 +125,67 @@ const playerImage = (position) => {
     ];
 };
 
+const birdImage = (position) => {
+    return [
+        `assets/images/birds/bird_flying_${position}_1.png`,
+        `assets/images/birds/bird_flying_${position}_1.png`,
+        `assets/images/birds/bird_flying_${position}_1.png`,
+        `assets/images/birds/bird_flying_${position}_1.png`,
+        `assets/images/birds/bird_flying_${position}_1.png`,
+        `assets/images/birds/bird_flying_${position}_1.png`,
+        `assets/images/birds/bird_flying_${position}_1.png`,
+        `assets/images/birds/bird_flying_${position}_1.png`,
+        `assets/images/birds/bird_flying_${position}_1.png`,
+        `assets/images/birds/bird_flying_${position}_1.png`,
+
+        `assets/images/birds/bird_flying_${position}_2.png`,
+        `assets/images/birds/bird_flying_${position}_2.png`,
+        `assets/images/birds/bird_flying_${position}_2.png`,
+        `assets/images/birds/bird_flying_${position}_2.png`,
+        `assets/images/birds/bird_flying_${position}_2.png`,
+        `assets/images/birds/bird_flying_${position}_2.png`,
+        `assets/images/birds/bird_flying_${position}_2.png`,
+        `assets/images/birds/bird_flying_${position}_2.png`,
+        `assets/images/birds/bird_flying_${position}_2.png`,
+        `assets/images/birds/bird_flying_${position}_2.png`,
+
+        `assets/images/birds/bird_flying_${position}_3.png`,
+        `assets/images/birds/bird_flying_${position}_3.png`,
+        `assets/images/birds/bird_flying_${position}_3.png`,
+        `assets/images/birds/bird_flying_${position}_3.png`,
+        `assets/images/birds/bird_flying_${position}_3.png`,
+        `assets/images/birds/bird_flying_${position}_3.png`,
+        `assets/images/birds/bird_flying_${position}_3.png`,
+        `assets/images/birds/bird_flying_${position}_3.png`,
+        `assets/images/birds/bird_flying_${position}_3.png`,
+        `assets/images/birds/bird_flying_${position}_3.png`,
+
+        `assets/images/birds/bird_flying_${position}_4.png`,
+        `assets/images/birds/bird_flying_${position}_4.png`,
+        `assets/images/birds/bird_flying_${position}_4.png`,
+        `assets/images/birds/bird_flying_${position}_4.png`,
+        `assets/images/birds/bird_flying_${position}_4.png`,
+        `assets/images/birds/bird_flying_${position}_4.png`,
+        `assets/images/birds/bird_flying_${position}_4.png`,
+        `assets/images/birds/bird_flying_${position}_4.png`,
+        `assets/images/birds/bird_flying_${position}_4.png`,
+        `assets/images/birds/bird_flying_${position}_4.png`,
+
+        `assets/images/birds/bird_flying_${position}_5.png`,
+        `assets/images/birds/bird_flying_${position}_5.png`,
+        `assets/images/birds/bird_flying_${position}_5.png`,
+        `assets/images/birds/bird_flying_${position}_5.png`,
+        `assets/images/birds/bird_flying_${position}_5.png`,
+        `assets/images/birds/bird_flying_${position}_5.png`,
+        `assets/images/birds/bird_flying_${position}_5.png`,
+        `assets/images/birds/bird_flying_${position}_5.png`,
+        `assets/images/birds/bird_flying_${position}_5.png`,
+        `assets/images/birds/bird_flying_${position}_5.png`,
+    ];
+};
+
 export {
     animalImage,
     playerImage,
+    birdImage,
 }
