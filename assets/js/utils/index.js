@@ -11,8 +11,14 @@ const keys = {
 	jump:  { pressed: false },
 };
 
+const stageSounds = [
+	new Audio('assets/sounds/stage_select_1_a.wav'),
+	new Audio('assets/sounds/stage_select_1_b.ogg'),
+	new Audio('assets/sounds/stage_select_1_c.ogg'),
+];
+
 const sounds = {
-	stageOne: new Audio('assets/sounds/stage_select_1.wav'),
+	stageOne: stageSounds[Math.floor(Math.random() * stageSounds.length)],
 	playerJump: new Audio('assets/sounds/slime_jump.wav'),
 	rescuedAnimal: new Audio('assets/sounds/select.wav'),
 	menuSelect: new Audio('assets/sounds/menu_collect.ogg'),
