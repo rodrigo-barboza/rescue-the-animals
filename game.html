@@ -1,21 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
+
 <head>
 	<title>Game</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script type="module" src="assets/js/script.js"></script>
 </head>
+
 <body>
 	<div id="main-menu">
 		<div class="menu">
 			<div class="btn btn-play">
-				<img src="assets/images/menu/play-button.png"/>
+				<img src="assets/images/menu/play-button.png" />
 			</div>
 			<div class="btn btn-instructions">
-				<img src="assets/images/menu/instructions-button.png"/>
+				<img src="assets/images/menu/instructions-button.png" />
 			</div>
 			<div class="btn btn-about">
-				<img src="assets/images/menu/about-button.png"/>
+				<img src="assets/images/menu/about-button.png" />
+			</div>
+		</div>
+		<div class="instructions">
+			<h2>Instruções</h2>
+			<div>Resgate os animais que estão presos nas jaulas sem que os passáros te peguem no menor tempo possível.
+			</div>
+			<div>As setas controlam o personagem</div>
+			<div class="instructions-image">
+				<img src="assets/images/instructions.png" width="40%">
+			</div>
+			<div class="instructions-menu-button">
+				<img src="assets/images/menu/menu-button.png" />
+			</div>
+		</div>
+		<div class="about">
+			<h2>Sobre</h2>
+			<div class="about-info">Restage os animais é um web jogo desenvolvido no Núcleo Temático Escola
+				Verde da Universidade Federal do Vale do São Francisco pelo discente de engenharia
+				de Computação Rodrigo Leandro Ramos Barboza da Silva, com supervisão do professor
+				Paulo Ramos.
+			</div><br />
+			<div>Resgate os animais foi desenvolvido em 2022 e 2023</div><br />
+			<div class="about-menu-button">
+				<img src="assets/images/menu/menu-button.png" />
 			</div>
 		</div>
 	</div>
@@ -25,16 +52,24 @@
 				<div>Pausado</div>
 				<div class="pause-subtitle">Enter para retormar o jogo</div>
 			</div>
+			<div class="victory-window">
+				<div>Vitória!</div>
+				<div class="pause-subtitle">Enter para voltar ao menu</div>
+			</div>
+			<div class="game-over-window">
+				<div>Game Over</div>
+				<div class="pause-subtitle">Enter para jogar novamente</div>
+			</div>
 			<div class="game-menu">
 				<div class="hearts"></div>
-					<div class="menu-buttons">
-						<div class="pause-button">
-							<img src="assets/images/menu/pause-button.png" />
-						</div>
-						<div class="menu-button">
-							<img src="assets/images/menu/menu-button.png" />
-						</div>
+				<div class="menu-buttons">
+					<div class="pause-button">
+						<img src="assets/images/menu/pause-button.png" />
 					</div>
+					<div class="menu-button">
+						<img src="assets/images/menu/menu-button.png" />
+					</div>
+				</div>
 				<div class="time">
 					00:00
 				</div>
@@ -47,4 +82,5 @@
 	</div>
 	<img id="heart" src="" />
 </body>
+
 </html>
