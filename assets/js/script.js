@@ -28,10 +28,16 @@ let gameReset = false;
 let min = 0;
 let sec = 0;
 let lives = 3;
+let gameOver = false;
+let victory = false;
 
 game.style.display = 'none';
 
 buttons.forEach(({ name, selector }) => {
+	const menu = document.querySelector('.menu');
+	const instructions = document.querySelector('.instructions');
+	const about = document.querySelector('.about');
+
 	selector.addEventListener('mouseover', () => {
 		selector.src = `assets/images/menu/${name}-button-hover.png`;
 		sounds.menuSelect.autoplay = true;
@@ -40,21 +46,55 @@ buttons.forEach(({ name, selector }) => {
 	selector.addEventListener('mouseout', () => {
 		selector.src = `assets/images/menu/${name}-button.png`;
 	});
-	selector.addEventListener('click', () => {
-		playGame();
-	});
+
+	if (name === 'play') {
+		selector.addEventListener('click', () => {
+			playGame();
+		});
+	}
+	if (name === 'instructions') {
+		selector.addEventListener('click', () => {
+			menu.style.display = 'none';
+			instructions.style.display = 'flex';
+			about.style.display = 'none';
+			document.querySelector('.instructions-menu-button').addEventListener('click', () => {
+				window.location.reload();
+			});
+		});
+	}
+	if (name === 'about') {
+		selector.addEventListener('click', () => {
+			menu.style.display = 'none';
+			instructions.style.display = 'none';
+			about.style.display = 'flex';
+			document.querySelector('.about-menu-button').addEventListener('click', () => {
+				window.location.reload();
+			});
+		});
+	}
 });
 
 document.querySelector('.pause-button').addEventListener('click', () => pauseGame(true));
-document.querySelector('.menu-button').addEventListener('click', () => backToMenu());
+document.querySelector('.menu-button').addEventListener('click', () => window.location.reload());
 
 document.addEventListener("keydown", (event) => {
 	if (event.key === 'p') {
 		pauseGame(true);
 	}
 
-	if (event.key === 'Enter' && pause.state) {
+	if (event.key === 'Enter' && pause.state && !gameOver) {
 		pauseGame(false);
+	}
+
+	if (event.key === 'Enter' && gameOver) {
+		let gameOverContainer = document.querySelector('.game-over-window');
+		gameOverContainer.style.display = 'none';
+		gameOver = false;
+		playGame();
+	}
+
+	if (event.key === 'Enter' && victory) {
+		window.location.reload();
 	}
 
 	if (!pause.state) {
@@ -91,11 +131,20 @@ document.addEventListener("keyup", (event) => {
 });
 
 const playGame = () => {
+	player = {};
+	platforms = [];
+	animals = [];
+	birds = [];
+	pause = {};
+	gameReset = false;
+	min = 0;
+	sec = 0;
+	lives = 3;
+	gameOver = false;
+
 	menu.style.display = 'none';
 	game.style.display = 'block';
 	sounds.stageOne.muted = false;
-	gameReset = false;
-	lives = 3;
 
 	player = new Player();
 	
@@ -197,6 +246,9 @@ const animate = () => {
 const animalSaved = (animal) => {
 	sounds.rescuedAnimal.play();
 	animal.state = 'free';
+	if (animals.every(animal => animal.state === 'free')) {
+		showVictoryContainer();
+	}
 }
 
 const time = () => {
@@ -251,14 +303,32 @@ const resetPlayerPosition = () => {
 }
 
 const playerFail = () => {
-	lives = lives - 1;
-	addHearts(lives);
-	resetPlayerPosition();
+	if (lives) {
+		lives = lives - 1;
+		addHearts(lives);
+		resetPlayerPosition();
+	} else {
+		showGameOverContainer();
+	}
 }
 
 const showPauseContainer = () => {
 	let pauseContainer = document.querySelector('.pause-window');
 	pauseContainer.style.display = pause.state ? 'flex' : 'none';
+}
+
+const showGameOverContainer = () => {
+	let gameOverContainer = document.querySelector('.game-over-window');
+	pause.state = true;
+	gameOver = true;
+	gameOverContainer.style.display = gameOver ? 'flex' : 'none';
+}
+
+const showVictoryContainer = () => {
+	let victoryContainer = document.querySelector('.victory-window');
+	pause.state = true;
+	victory = true;
+	victoryContainer.style.display = victory ? 'flex' : 'none';
 }
 
 const pauseGame = (state) => {
