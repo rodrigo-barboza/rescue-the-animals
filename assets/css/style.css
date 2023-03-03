@@ -16,9 +16,10 @@ body {
 	background-size: cover;
 }
 
-#main-menu , #playground {
+#main-menu,
+#playground {
 	margin-top: 20px;
-	width: 85vw;
+	width: 70vw;
 	height: 95vh;
 	overflow-x: hidden;
 	background: #ccc;
@@ -114,10 +115,38 @@ canvas {
 	color: #fff;
 	width: 100px;
 	-webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #000;
+	-webkit-text-stroke-color: #000;
 }
 
 .pause-window {
+	position: absolute;
+	z-index: 10002;
+	background-color: rgba(0, 0, 0, .5);
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-size: 50px;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-over-window {
+	position: absolute;
+	z-index: 10002;
+	background-color: rgba(0, 0, 0, .5);
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-size: 50px;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.victory-window {
 	position: absolute;
 	z-index: 10002;
 	background-color: rgba(0, 0, 0, .5);
@@ -144,4 +173,37 @@ canvas {
 	display: flex;
 	margin-right: 5px;
 	cursor: pointer;
+}
+
+.instructions {
+	background: url('../images/background.png');
+	background-size: contain;
+	background-position: center;
+	height: 100%;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.about {
+	background: url('../images/background.png');
+	background-size: contain;
+	background-position: center;
+	height: 100%;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.instructions-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about-info {
+	max-width: 50%;
+	text-align: center;
 }
